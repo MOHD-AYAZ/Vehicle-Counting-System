@@ -5,36 +5,49 @@
 int Menu();
 void ShowdDetails();
 void deleteData();
-void cycle();
-void motorCycle();
-void rikshaw();
-void car();
-void bus();
-void truck();
+void cycle(int);
+void motorCycle(int);
+void rikshaw(int);
+void car(int);
+void bus(int);
+void truck(int);
 int NOcycle=0,NOMcycle=0,NOrikshw=0,NOcar=0,NObus=0,NOtruck=0,amount=0,count=0;
 
 void main(){
     while(1){
     system("cls");
+                int itms;
     switch(Menu())
     {
         case 1:
-                cycle();
+                printf("How many cycle do you want to enter?");
+                scanf("%d",&itms);
+                cycle(itms);
                 break;
         case 2:
-                motorCycle();
+                printf("How many motorcycle do you want to enter?");
+                scanf("%d",&itms);
+                motorCycle(itms);
                 break;
         case 3:
-                rikshaw();
+                printf("How many rikshaw do you want to enter?");
+                scanf("%d",&itms);
+                rikshaw(itms);
                 break;
         case 4:
-                car();
+                printf("How many car do you want to enter?");
+                scanf("%d",&itms);
+                car(itms);
                 break;
         case 5:
-                bus();
+                printf("How many bus do you want to enter?");
+                scanf("%d",&itms);
+                bus(itms);
                 break;
         case 6:
-                truck();
+                printf("How many truck do you want to enter?");
+                scanf("%d",&itms);
+                truck(itms);
                 break;
         case 7:
                 ShowdDetails();
@@ -97,55 +110,54 @@ void deleteData()
  printf("Press->Enter to go on menu \n"); 
 
 }
-void cycle()
+void cycle(int x)
 {
-    NOcycle++;
-    amount = amount + 20;
-    count++;
-    printf("New cycle enterd in record\n");
+    NOcycle+=x;
+    amount = amount + (x*20);
+    count+=x;
+    printf("New %d cycles enterd in record\n",x);
     printf("Press->Enter to go on menu \n");
 }
 
-void motorCycle()
+void motorCycle(x)
 {
-    NOMcycle++;
-    amount = amount + 40;
-    count++;
-    printf("New motorcycle enterd in record\n");
+    NOMcycle+=x;
+    amount = amount + (x*40);
+    count+=x;
+    printf("New %d motorcycle enterd in record\n",x);
     printf("Press->Enter to go on menu \n");
 }
-void rikshaw()
+void rikshaw(x)
 {
-    NOrikshw++;
-    amount = amount + 70;
-    count++;
-    printf("New rikshaw enterd in record\n");
+    NOrikshw+=x;
+    amount = amount + (x*70);
+    count+=x;
+    printf("New %d rikshaw enterd in record\n",x);
     printf("Press->Enter to go on menu \n");
 }
-void car()
+void car(x)
 {
-    NOcar++;
-    amount = amount + 100;
-    count++;
-    printf("New car enterd in record\n");
+    NOcar+=x;
+    amount = amount + (x*100);
+    count+=x;
+    printf("New %d car enterd in record\n",x);
+    printf("Press->Enter to go on menu \n");
+}
+void bus(x)
+{
+    NObus+=x;
+    amount = amount + (x*200);
+    count+=x;
+    printf("New %d bus enterd in record\n",x);
     printf("Press->Enter to go on menu \n");
 
 }
-void bus()
+void truck(x)
 {
-    NObus++;
-    amount = amount + 200;
-    count++;
-    printf("New bus enterd in record\n");
-    printf("Press->Enter to go on menu \n");
-
-}
-void truck()
-{
-    NOtruck++;
-    amount = amount + 250;
-    count++;
-    printf("New truck enterd in record\n");
+    NOtruck+=x;
+    amount = amount + (x*250);
+    count+=x;
+    printf("New %d truck enterd in record\n",x);
     printf("Press->Enter to go on menu \n");
 
 }
